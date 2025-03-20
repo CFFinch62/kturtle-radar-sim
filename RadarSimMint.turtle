@@ -1,0 +1,206 @@
+kturtle-script-v1.0
+@(clear)
+@(reset)
+@(spritehide)
+@(canvascolor) 0@(,)0@(,)0
+
+@(learn) box $x@(,)$y@(,)$w@(,)$h@(,)$p {
+  @(go) $x@(,)$y
+  @(direction) 0
+  @(turnright) 90
+  @(penwidth) $p
+  @(pendown)
+  @(repeat) 2 {
+    @(forward) $w
+    @(turnright) 90
+    @(forward) $h
+    @(turnright) 90  
+  }
+}
+
+@(learn) draw_ppi {
+  @(center)
+  @(direction) 0
+  @(pencolor) 0@(,)0@(,)75
+  @(penwidth) 20
+  @(pendown)
+  @(repeat) 72 {
+    @(forward) 170
+    @(backward) 170
+    @(turnright) 5
+  }
+  @(penup)
+  @(pencolor) 0@(,)0@(,)0
+  @(penwidth) 0  
+}
+
+@(learn) draw_rings {
+  @(center)
+  @(direction) 0
+  @(pencolor) 0@(,)255@(,)0
+  @(penwidth) 2
+  @(forward) 180
+  @(turnright) 90
+  @(pendown)
+  @(repeat) 360 {
+    @(forward) 3.15
+    @(turnright) 1
+  }
+  @(penup)
+  @(center)
+  @(direction) 0
+  @(forward) 120
+  @(turnright) 90
+  @(pendown)
+  @(repeat) 360 {
+    @(forward) 2.1
+    @(turnright) 1
+  }
+  @(penup)
+  @(center)
+  @(direction) 0
+  @(forward) 60
+  @(turnright) 90
+  @(pendown)
+  @(repeat) 360 {
+    @(forward) 1.05
+    @(turnright) 1
+  }
+  @(penup)
+  @(pencolor) 0@(,)0@(,)0
+  @(penwidth) 0  
+}
+
+@(learn) draw_rose {
+  @(center)
+  @(direction) 0
+  @(pencolor) 0@(,)255@(,)0
+  @(penwidth) 2
+  @(for) $r = 1 @(to) 35 {
+    @(center)
+      @(direction) $r * 10
+    @(forward) 170
+    @(pendown)
+    @(forward) 10
+    @(penup)
+  }
+  @(penup)
+  @(pencolor) 0@(,)0@(,)0
+  @(penwidth) 0  
+}
+
+@(learn) draw_hm {
+  @(center)
+  @(direction) 0
+  @(pencolor) 0@(,)255@(,)0
+  @(penwidth) 2
+  @(pendown)
+  @(forward) 180
+  @(penup)
+  @(pencolor) 0@(,)0@(,)0
+  @(penwidth) 0  
+}
+
+@(learn) draw_symbols {
+  @(center)
+  @(direction) 0
+  @(pencolor) 255@(,)255@(,)0
+   @(go) 0@(,)0
+  @(fontsize) 20
+  @(print) "0.75 NM"
+   @(go) 0@(,)25
+  @(fontsize) 12
+  @(print) "0.25 NM"  
+   @(go) 0@(,)45
+  @(fontsize) 12
+  @(print) "HU    M1"
+   @(go) 173@(,)0
+  @(fontsize) 12
+  @(pencolor) 255@(,)255@(,)255
+  @(print) "254.3 M"  
+  @(pencolor) 255@(,)255@(,)0
+   @(go) 315@(,)0
+  @(fontsize) 15
+  @(print) " 42'04.30N"  
+   @(go) 310@(,)20
+  @(fontsize) 15
+  @(print) "072'53.09W"  
+   @(go) 340@(,)45
+  @(fontsize) 12
+  @(print) "10.5 KTS"  
+   @(go) 0@(,)340
+  @(fontsize) 12
+  @(print) "GAIN"  
+   @(go) 0@(,)355
+  @(fontsize) 12
+  @(print) "  STC"    
+   @(go) 0@(,)370
+  @(fontsize) 12
+  @(print) "  FTC"  
+  box 40@(,)348@(,)40@(,)10@(,)1  
+  box 40@(,)363@(,)40@(,)10@(,)1  
+  box 40@(,)378@(,)40@(,)10@(,)1  
+  @(pencolor) 255@(,)255@(,)255
+  box 43@(,)351@(,)28@(,)4@(,)4  
+  box 43@(,)366@(,)13@(,)4@(,)4
+  box 43@(,)381@(,)2@(,)4@(,)4
+  @(penup)
+  @(pencolor) 0@(,)0@(,)0
+  @(penwidth) 0  
+}
+
+@(learn) scan $n {
+  @(for) $s = 1 @(to) $n {
+    @(center)
+    @(direction) 0
+    @(repeat) 35 {
+      @(pencolor) 0@(,)175@(,)255
+      @(penwidth) 2
+      @(turnright) 10
+      @(pendown)
+      @(forward) 55
+      @(penup)
+      @(forward) 8
+      @(pendown)
+      @(forward) 53
+      @(penup)
+      @(forward) 8
+      @(pendown)
+      @(forward) 43
+      @(penup)
+      @(pencolor) 0@(,)0@(,)75
+      @(penwidth) 3
+      @(turnright) 180
+      @(pendown)
+      @(forward) 43
+      @(penup)
+      @(forward) 8
+      @(pendown)
+      @(forward) 53
+      @(penup)
+      @(forward) 8
+      @(pendown)
+      @(forward) 55
+      @(penup) 
+      @(turnright) 180
+    }
+    draw_hm
+    @(wait) 0.5
+  }
+}
+
+#learn draw_targets []
+
+@(pencolor) 255@(,)255@(,)255
+@(pendown)
+box 1@(,)1@(,)398@(,)398@(,)2
+@(penup)
+@(pencolor) 0@(,)0@(,)0
+draw_ppi
+draw_rings
+draw_hm
+draw_rose
+draw_symbols
+scan 3
+#draw_targets
+
